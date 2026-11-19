@@ -1,5 +1,5 @@
 <%-- 
-    Document   : cuentas
+    Document   : registro
     Created on : 16/11/2026, 7:20:30 p. m.
     Author     : Win 11 Pro
 --%>
