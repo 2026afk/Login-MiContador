@@ -20,7 +20,7 @@
       <div>
         <strong>Juan</strong><br>
         
-        <a href="<%= request.getContextPath ()%>/logoutserlevt"> Cerrar Sesion</a>
+        <a href="<%= request.getContextPath ()%>/logoutservlet"> Cerrar Sesion</a>
     
       </div>
     </div>
