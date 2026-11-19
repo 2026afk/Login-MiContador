@@ -5,15 +5,16 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Paso 2: Servidor Apache Tomcat 10 (Requerido para Jakarta EE 10)
+# Paso 2: Servidor Apache Tomcat 10 
 FROM tomcat:10.1-jdk17-temurin
 
 # Limpiar aplicaciones por defecto de Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copiar el WAR generado (MiContador.war) a la raíz del servidor
-COPY --from=builder /app/target/MiContador.war /usr/local/tomcat/webapps/ROOT.war
+# Copiar el WAR generado a la raíz del servidor
+COPY --from=builder /app/target/MiContador-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"] 
+CMD ["catalina.sh", "run"]
+
