@@ -11,8 +11,8 @@ FROM tomcat:10.1-jdk17-temurin
 # Limpiar aplicaciones por defecto de Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copiar el WAR generado (Libreria-1.0.war) a la raíz del servidor
-COPY --from=builder /app/target/MiContador/usr/local/tomcat/webapps/ROOT.war
+# Copiar el WAR generado (MiContador.war) a la raíz del servidor
+COPY --from=builder /app/target/MiContador.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 
